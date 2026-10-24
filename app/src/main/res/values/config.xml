@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dock order, left to right. Use package names, or special:inputs for the HDMI/Live TV picker.
+         The number of entries (4 to 7) is also the number of columns in the app grid. -->
+    <string-array name="dock_apps">
+        <item>com.google.android.youtube.tv</item>
+        <item>com.amazon.amazonvideo.livingroom</item>
+        <item>com.apple.atve.androidtv.appletv</item>
+        <item>com.netflix.ninja</item>
+        <item>special:inputs</item>
+    </string-array>
+</resources>
