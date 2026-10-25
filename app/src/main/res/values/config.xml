@@ -7,6 +7,6 @@
         <item>com.amazon.amazonvideo.livingroom</item>
         <item>com.apple.atve.androidtv.appletv</item>
         <item>com.netflix.ninja</item>
-        <item>special:inputs</item>
+        <item>com.android.vending</item>
     </string-array>
 </resources>
