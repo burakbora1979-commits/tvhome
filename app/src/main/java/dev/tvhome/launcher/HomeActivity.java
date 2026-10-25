@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
@@ -134,6 +135,15 @@ public class HomeActivity extends Activity {
         scroll.smoothScrollTo(0, 0);
     }
 
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            launchApp(new Intent(Settings.ACTION_SETTINGS));
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
     // ---------------------------------------------------------------- skeleton
 
     private void buildSkeleton() {
@@ -152,7 +162,7 @@ public class HomeActivity extends Activity {
         // ambient glow sits under everything else
         glow = new View(this);
         glow.setAlpha(0f);
-        content.addView(glow, new FrameLayout.LayoutParams(dp(640), dp(360)));
+        content.addView(glow, new FrameLayout.LayoutParams(dp(480), dp(360)));
 
         column = new LinearLayout(this);
         column.setOrientation(LinearLayout.VERTICAL);
@@ -451,10 +461,10 @@ public class HomeActivity extends Activity {
         GradientDrawable g = new GradientDrawable();
         g.setShape(GradientDrawable.RECTANGLE);
         g.setGradientType(GradientDrawable.RADIAL_GRADIENT);
-        g.setGradientRadius(dp(300));
+        g.setGradientRadius(dp(180));
         g.setColors(new int[]{0x70000000 | rgb, rgb});
         glow.setBackground(g);
-        glow.animate().alpha(1f).translationX(cx - dp(320)).translationY(bandTop - dp(30) - dp(180))
+        glow.animate().alpha(1f).translationX(cx - dp(240)).translationY(bandTop - dp(30) - dp(180))
                 .setDuration(300).start();
     }
 
